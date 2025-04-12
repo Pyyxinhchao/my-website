@@ -606,19 +606,78 @@ footer {
         grid-template-columns: 1fr; /* Mỗi mục liên hệ chiếm một cột */
     }
 
-    /* Form */
+   /* Form */
     .contact-form {
-        padding: 15px; /* Thêm padding cho form */
-         max-width: 100%; /* Thêm dòng này */
+        padding: 15px;
+        max-width: 100%; /* Đảm bảo form không vượt quá chiều rộng container */
     }
 
     .form-group {
-        max-width: 100%; /* Thêm dòng này */
+        margin-bottom: 20px;
+        max-width: 100%; /* Đảm bảo form-group không vượt quá chiều rộng container */
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: var(--dark-color);
+        max-width: 100%; /* Đảm bảo label không bị tràn */
+    }
+
+    label i {
+        color: var(--secondary-color);
+        flex-shrink: 0; /* Ngăn icon bị co lại */
     }
 
     input, textarea {
-        width: 100%; /* Bạn đã có dòng này */
-        max-width: 100%; /* Thêm dòng này để chắc chắn */
+        width: 100%; /* Chiếm toàn bộ chiều rộng khả dụng */
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1em;
+        transition: var(--transition);
+        box-sizing: border-box; /* **QUAN TRỌNG:** Đảm bảo padding và border nằm trong width */
+        max-width: 100%; /* Đảm bảo không vượt quá chiều rộng container */
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.2);
+    }
+
+    .submit-btn {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+        width: 100%; /* **THỬ THÊM:** Làm nút chiếm toàn bộ chiều rộng */
+        box-sizing: border-box; /* **QUAN TRỌNG:** Đảm bảo padding nằm trong width */
+    }
+
+    .submit-btn:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... Các CSS khác cho màn hình rất nhỏ ... */
+    .submit-btn {
+        padding: 10px 20px; /* Giảm padding nút trên màn hình nhỏ hơn */
+        font-size: 0.9em;
     }
 }
 
