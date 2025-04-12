@@ -1,4 +1,5 @@
-{
+/* Reset CSS */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,26 +18,15 @@
     --border-radius: 15px;
     --accent-color: #888888;
 }
+
+/* Body */
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('bg.jpg'); /* Thay 'ten-anh.jpg' bằng tên file của bạn */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    color: #222; /* Màu chữ đậm để nổi bật trên nền sáng */
-}
-}
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* màu đen mờ phủ lên ảnh nền */
-    min-height: 100vh;
-    width: 100%;
-    color: white; /* màu chữ để đảm bảo dễ đọc */
-    padding: 20px;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -44,31 +34,39 @@ body {
     line-height: 1.7;
 }
 
+/* Overlay */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Màu đen mờ phủ lên ảnh nền */
+    min-height: 100vh;
+    width: 100%;
+    color: white; /* Màu chữ đảm bảo dễ đọc */
+    padding: 20px;
+}
 
 /* Header */
 header {
-    background-color: var(--dark-color); /* Chọn màu nền của header giống màu thanh điều hướng */
-    color: white; /* Đảm bảo chữ màu trắng */
-    padding: 25px 0 0;
+    background-color: var(--dark-color); /* Màu nền của header */
+    color: white;
+    padding: 25px 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     margin-bottom: 40px;
-    text-align: center; /* Căn giữa toàn bộ nội dung trong header */
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
     font-weight: 700;
-    color: white; /* Màu chữ tiêu đề thành trắng */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ để chữ dễ nhìn */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .subtitle {
     margin: 5px 0 0;
     font-size: 1.2em;
     opacity: 0.9;
-    color: white; /* Đảm bảo chữ phụ cũng có màu trắng */
+    color: white;
 }
 
 .location {
@@ -78,10 +76,8 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: white; /* Đảm bảo tất cả chữ trong phần location có màu trắng */
-    text-align: center; /* Căn giữa nội dung trong location */
+    color: white;
 }
-
 
 /* Navigation */
 nav {
@@ -281,14 +277,15 @@ blockquote {
 /* Favorites Grid */
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);  /* Tạo 4 cột đều */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
 
 /* Đảm bảo mục "Vloggers yêu thích" chiếm 2 cột */
 .favorite-category.vloggers {
-    grid-column: span 2;  /* Chiếm 2 cột */
+    grid-column: span 2;
 }
+
 .favorite-category {
     background-color: rgba(102, 102, 102, 0.1);
     padding: 20px;
@@ -399,202 +396,43 @@ blockquote {
 
 /* Form */
 .contact-form {
-    max-width: 700px;
+    max-width: 100%;
+    padding: 20px;
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--dark-color);
-}
-
-label i {
-    color: var(--secondary-color);
-}
-
-input, textarea {
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: var(--transition);
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.2);
-}
-
-.submit-btn {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.submit-btn:hover {
+.contact-form button {
+    width: 100%;
+    padding: 12px;
     background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-/* Map container fix */
-.map-container {
-    width: 100%;
-    height: 450px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    margin: 20px 0;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
+    color: white;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Footer styling */
-footer {
-    background-color: var(--dark-color);
-    color: white;
-    padding: 25px 0;
-    margin-top: 50px;
+.contact-form button:hover {
+    background-color: var(--secondary-color);
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5em;
-    margin-left: 15px;
-    transition: var(--transition);
-}
-
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: translateY(-3px);
-}
-
-/* Responsive fixes */
+/* Điều chỉnh cho các thiết bị di động */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .hobby-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2em;
-    }
-    
-    nav a {
-        padding: 12px 15px;
-        font-size: 0.9em;
-    }
-    
-    .hobby-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .profile-image {
-        width: 180px;
-        height: 180px;
-    }
-}
-/* Media Queries cho màn hình nhỏ */
-@media (max-width: 768px) {
-    /* Header */
-    header h1 {
-        font-size: 2em; /* Giảm kích thước tiêu đề */
+        grid-template-columns: 1fr; /* Các phần tử sẽ hiển thị theo cột đơn trên màn hình nhỏ */
+        gap: 10px; /* Giảm khoảng cách giữa các phần tử */
     }
 
-    /* Navigation */
-    nav ul {
-        flex-direction: column; /* Đặt menu thành dạng cột */
-    }
-
-    nav a {
-        padding: 12px 20px; /* Giảm padding để vừa với màn hình nhỏ */
-        font-size: 1em;
-    }
-
-    /* Main Content */
-    main {
-        padding: 0 15px; /* Thêm padding vào 2 bên */
-    }
-
-    /* Card */
-    .card {
-        padding: 20px; /* Giảm padding trong các card */
-        margin-bottom: 20px; /* Giảm khoảng cách giữa các card */
-    }
-
-    /* Profile Section */
-    .profile-image {
-        width: 180px; /* Giảm kích thước ảnh đại diện */
-        height: 180px;
-    }
-
-    /* Hobby Grid */
-    .hobby-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Thay đổi số cột */
-    }
-
-    /* Favorites Grid */
-    .favorites-grid {
-        grid-template-columns: 1fr 1fr; /* Giảm số cột cho grid */
-    }
-
-    /* Project Section */
-    .project-list {
-        grid-template-columns: 1fr; /* Mỗi mục sẽ chiếm một hàng */
-    }
-
-    /* Contact Grid */
-    .contact-grid {
-        grid-template-columns: 1fr 1fr; /* Mỗi mục liên hệ chiếm một cột */
-    }
-
-    /* Form */
     .contact-form {
-        padding: 15px; /* Thêm padding cho form */
-        width: 100%;
+        padding: 15px;
     }
-}
 
-
+    .contact-method
