@@ -1,5 +1,4 @@
-/* Reset CSS */
-* {
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,15 +17,26 @@
     --border-radius: 15px;
     --accent-color: #888888;
 }
-
-/* Body */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url('bg.jpg'); /* Thay 'ten-anh.jpg' bằng tên file của bạn */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    color: #222; /* Màu chữ đậm để nổi bật trên nền sáng */
+}
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* màu đen mờ phủ lên ảnh nền */
+    min-height: 100vh;
+    width: 100%;
+    color: white; /* màu chữ để đảm bảo dễ đọc */
+    padding: 20px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -34,39 +44,31 @@ body {
     line-height: 1.7;
 }
 
-/* Overlay */
-.overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Màu đen mờ phủ lên ảnh nền */
-    min-height: 100vh;
-    width: 100%;
-    color: white; /* Màu chữ đảm bảo dễ đọc */
-    padding: 20px;
-}
 
 /* Header */
 header {
-    background-color: var(--dark-color); /* Màu nền của header */
-    color: white;
-    padding: 25px 0;
+    background-color: var(--dark-color); /* Chọn màu nền của header giống màu thanh điều hướng */
+    color: white; /* Đảm bảo chữ màu trắng */
+    padding: 25px 0 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     margin-bottom: 40px;
-    text-align: center;
+    text-align: center; /* Căn giữa toàn bộ nội dung trong header */
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
     font-weight: 700;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    color: white; /* Màu chữ tiêu đề thành trắng */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Thêm một chút bóng đổ để chữ dễ nhìn */
 }
 
 .subtitle {
     margin: 5px 0 0;
     font-size: 1.2em;
     opacity: 0.9;
-    color: white;
+    color: white; /* Đảm bảo chữ phụ cũng có màu trắng */
 }
 
 .location {
@@ -76,8 +78,10 @@ header h1 {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: white;
+    color: white; /* Đảm bảo tất cả chữ trong phần location có màu trắng */
+    text-align: center; /* Căn giữa nội dung trong location */
 }
+
 
 /* Navigation */
 nav {
@@ -277,15 +281,14 @@ blockquote {
 /* Favorites Grid */
 .favorites-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);  /* Tạo 4 cột đều */
     gap: 30px;
 }
 
 /* Đảm bảo mục "Vloggers yêu thích" chiếm 2 cột */
 .favorite-category.vloggers {
-    grid-column: span 2;
+    grid-column: span 2;  /* Chiếm 2 cột */
 }
-
 .favorite-category {
     background-color: rgba(102, 102, 102, 0.1);
     padding: 20px;
@@ -396,114 +399,218 @@ blockquote {
 
 /* Form */
 .contact-form {
-    max-width: 100%;
-    padding: 20px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.form-group {
+    margin-bottom: 20px;
 }
 
-.contact-form button {
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+}
+
+label i {
+    color: var(--secondary-color);
+}
+
+input, textarea {
     width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(102, 102, 102, 0.2);
+}
+
+.submit-btn {
+    background-color: var(--secondary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
     cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.contact-form button:hover {
-    background-color: var(--secondary-color);
+.submit-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
-/* Điều chỉnh cho các thiết bị di động */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr; /* Các phần tử sẽ hiển thị theo cột đơn trên màn hình nhỏ */
-        gap: 10px; /* Giảm khoảng cách giữa các phần tử */
-    }
+/* Map container fix */
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    margin: 20px 0;
+}
 
-    .contact-form {
-        padding: 15px;
-    }
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
-    .contact-method
+/* Footer styling */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin-left: 15px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Responsive fixes */
 @media (max-width: 768px) {
-    nav ul {
+    .footer-content {
         flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        padding: 10px 15px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .favorites-grid {
-        grid-template-columns: 1fr; /* Hiển thị từng cột một */
+        gap: 15px;
     }
 
     .hobby-grid {
-        grid-template-columns: 1fr; /* Một cột trên màn nhỏ */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr; /* **SỬA ĐÂY:** Chuyển thành 1 cột trên màn hình nhỏ */
+    }
+    .favorite-category.vloggers {
+        grid-column: span 1; /* **SỬA ĐÂY:** Đảm bảo vloggers không chiếm 2 cột trên mobile */
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* **SỬA ĐÂY:** Chuyển thành 1 cột trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column; /* **SỬA ĐÂY:** Đảm bảo menu dọc hoàn toàn trên màn hình rất nhỏ */
+    }
+
+    nav a {
+        padding: 12px 15px;
+        font-size: 0.9em;
+        text-align: center; /* **SỬA ĐÂY:** Căn giữa các mục menu khi dọc */
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr; /* **SỬA ĐÂY:** Chuyển thành 1 cột trên màn hình rất nhỏ */
     }
 
     .profile-image {
-        width: 150px;
-        height: 150px;
-    }
-
-    section h2, section h3 {
-        font-size: 1.3em;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .video-container {
-        padding-bottom: 75%; /* tăng chiều cao video cho phù hợp điện thoại */
-    }
-
-    .contact-method {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 180px;
+        height: 180px;
     }
 }
-    img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-.column {
-  flex: 1;
-  min-width: 250px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-    footer {
-  clear: both;
-  margin-top: 50px;
-  padding: 20px;
-  text-align: center;
-  background-color: #111;
-  color: white;
-}
-    html, body {
-  height: 100%;
+
+/* Media Queries cho màn hình nhỏ (ĐÃ HỢP NHẤT) */
+@media (max-width: 768px) {
+    /* Header */
+    header h1 {
+        font-size: 2em; /* Giảm kích thước tiêu đề */
+    }
+
+    /* Navigation */
+    nav ul {
+        flex-direction: column; /* Đặt menu thành dạng cột */
+    }
+
+    nav a {
+        padding: 12px 20px; /* Giảm padding để vừa với màn hình nhỏ */
+        font-size: 1em;
+    }
+
+    /* Main Content */
+    main {
+        padding: 0 15px; /* Thêm padding vào 2 bên */
+    }
+
+    /* Card */
+    .card {
+        padding: 20px; /* Giảm padding trong các card */
+        margin-bottom: 20px; /* Giảm khoảng cách giữa các card */
+    }
+
+    /* Profile Section */
+    .profile-image {
+        width: 180px; /* Giảm kích thước ảnh đại diện */
+        height: 180px;
+    }
+
+    /* Hobby Grid */
+    .hobby-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Thay đổi số cột */
+    }
+
+    /* Favorites Grid */
+    .favorites-grid {
+        grid-template-columns: 1fr; /* **SỬA ĐÂY:** Quan trọng: Chuyển thành 1 cột trên mobile */
+    }
+    .favorite-category.vloggers {
+        grid-column: span 1; /* **SỬA ĐÂY:** Đảm bảo vloggers không chiếm 2 cột trên mobile */
+    }
+
+    /* Project Section */
+    .project-list {
+        grid-template-columns: 1fr; /* Mỗi mục sẽ chiếm một hàng */
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+        grid-template-columns: 1fr; /* Mỗi mục liên hệ chiếm một cột */
+    }
+
+    /* Form */
+    .contact-form {
+        padding: 15px; /* Thêm padding cho form */
+        width: 100%;
+    }
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
-main {
-  flex: 1;
-}
