@@ -436,3 +436,47 @@ blockquote {
     }
 
     .contact-method
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .favorites-grid {
+        grid-template-columns: 1fr; /* Hiển thị từng cột một */
+    }
+
+    .hobby-grid {
+        grid-template-columns: 1fr; /* Một cột trên màn nhỏ */
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    section h2, section h3 {
+        font-size: 1.3em;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-container {
+        padding-bottom: 75%; /* tăng chiều cao video cho phù hợp điện thoại */
+    }
+
+    .contact-method {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+    img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
