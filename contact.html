@@ -1,0 +1,130 @@
+<!-- Trang Liên Hệ (contact.html) -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>Liên hệ</h1>
+            <p class="subtitle">Nguyễn Trần Phương Ly - MET04</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Chùa Hà, Cầu Giấy, Hà Nội, Việt Nam</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Giới thiệu chung</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> Một chút thông tin</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-info card">
+            <h2><i class="fas fa-address-card"></i> Thông tin liên hệ</h2>
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <p>Email: <a href="mailto:met22080053@hsb.ed.vn">met22080053@hsb.ed.vn</a></p>
+                </div>
+                <div class="contact-method">
+                    <i class="fab fa-facebook"></i>
+                    <p>Facebook: <a href="https://www.facebook.com/phuongg.ly.04" target="_blank">phuongg.ly.04</a></p>
+                </div>
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Địa chỉ: Chùa Hà, Cầu Giấy, Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section card">
+            <h2><i class="fas fa-paper-plane"></i> Gửi tin nhắn</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Họ tên của bạn</label>
+                    <input type="text" id="name" placeholder="Nguyễn Văn A" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email của bạn</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message"><i class="fas fa-comment"></i> Lời nhắn...</label>
+                    <textarea id="message" rows="5" placeholder="Nhập nội dung tin nhắn tại đây..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Gửi tin nhắn</button>
+            </form>
+        </section>
+        
+        <section class="map-section card">
+			<h2><i class="fas fa-map-marked-alt"></i> Vị trí của tôi</h2>
+			<div class="map-container">
+			<iframe 
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.979664094626!2d105.80098867592617!3d21.034248180616547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab324bd5be5f%3A0x487e2f3f946f9c29!2zNTIgQ2jDuWEgSMOgLCBD4bunIFBow7ogQ2jDuWksIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1712913276441!5m2!1svi!2s" 
+				width="600"
+				height="450" 
+				style="border:0;" 
+				allowfullscreen="" 
+				loading="lazy" 
+				referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
+			</div>
+		</section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Nguyễn Trần Phương Ly</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/phuongg.ly.04" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hiệu ứng chuyển trang nhẹ
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                if (link.target !== '_blank' && link.href !== 'mailto:met22080053@hsb.ed.vn') {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 300);
+                }
+            });
+        });
+
+        // Hiệu ứng xuất hiện khi cuộn trang
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Hiệu ứng khi gửi form
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ liên hệ lại sớm nhất có thể.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

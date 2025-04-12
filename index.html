@@ -1,0 +1,95 @@
+<!-- Trang chủ (index.html) -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Trần Phương Ly - Trang cá nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>Nguyễn Trần Phương Ly</h1>
+            <p class="subtitle">Sinh viên lớp MET04 - Mã SV: 22080053</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Cầu Giấy, Hà Nội, Việt Nam</p>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Giới thiệu chung</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> Một chút thông tin</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile card">
+            <div class="profile-content">
+                <img src="portrait.jpg" alt="Ảnh chân dung của Phương Ly" class="profile-image">
+                <blockquote>"Hãy khác biệt để nổi bật, đừng cố giống ai để hòa nhập."</blockquote>
+            </div>
+        </section>
+
+        <section class="intro card">
+            <h2><i class="fas fa-info-circle"></i> Giới thiệu</h2>
+            <p>Xin chào! Mình là Phương Ly, một sinh viên ngành Quản trị Doanh nghiệp và Công nghệ tại HSB. Mình có niềm yêu thích đặc biệt với viết lách, âm nhạc, video, game online và truyện. Trang web này là nơi mình chia sẻ về bản thân và những điều mình yêu thích.</p>
+        </section>
+
+        <section class="projects card">
+            <h2><i class="fas fa-tasks"></i> Dự án đã tham gia</h2>
+            <div class="project-list">
+                <div class="project-item">
+                    <h3><i class="fas fa-heart"></i> "Đông Ấm"</h3>
+                    <p>Hoạt động phát bữa ăn miễn phí cho bệnh nhân tại Viện Huyết học - Truyền máu Trung ương, thuộc CLB HVC.</p>
+                </div>
+                <div class="project-item">
+                    <h3><i class="fas fa-bread-slice"></i> "Từ Tâm - Ổ bánh mì di động"</h3>
+                    <p>Dự án phát bánh mì miễn phí cho người lao động tại Hà Nội, do CLB HVC tổ chức.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Nguyễn Trần Phương Ly</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/phuongg.ly.04" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hiệu ứng chuyển trang nhẹ
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                if (link.target !== '_blank' && link.href !== 'mailto:met22080053@hsb.ed.vn') {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 300);
+                }
+            });
+        });
+
+        // Hiệu ứng xuất hiện khi cuộn trang
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
