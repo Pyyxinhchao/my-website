@@ -609,7 +609,16 @@ footer {
     /* Form */
     .contact-form {
         padding: 15px; /* Thêm padding cho form */
-        width: 100%;
+         max-width: 100%; /* Thêm dòng này */
+    }
+
+    .form-group {
+        max-width: 100%; /* Thêm dòng này */
+    }
+
+    input, textarea {
+        width: 100%; /* Bạn đã có dòng này */
+        max-width: 100%; /* Thêm dòng này để chắc chắn */
     }
 }
 
