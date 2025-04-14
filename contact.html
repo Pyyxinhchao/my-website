@@ -13,12 +13,12 @@
         <div class="header-inner">
             <h1>Contact</h1>
             <p class="subtitle">Nguyễn Trần Phương Ly - MET04</p>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> Chua Ha, Cau Giay, Ha Noi, Viet Nam</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Chua Ha, Cau Giay, Hanoi, Vietnam</p>
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Giới thiệu</a></li>
-                    <li><a href="about.html"><i class="fas fa-user"></i> Một chút thông tin</a></li>
-                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Introduce</a></li>
+                    <li><a href="about.html"><i class="fas fa-user"></i> Hobbies & Goals</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -26,7 +26,7 @@
 
     <main>
         <section class="contact-info card">
-            <h2><i class="fas fa-address-card"></i> Thông tin liên hệ</h2>
+            <h2><i class="fas fa-address-card"></i> Contact Information</h2>
             <div class="contact-grid">
                 <div class="contact-method">
                     <i class="fas fa-envelope"></i>
@@ -38,35 +38,35 @@
                 </div>
                 <div class="contact-method">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>Địa chỉ: Chùa Hà, Cầu Giấy, Hà Nội, Việt Nam</p>
+                    <p>Address: Chua Ha, Cau Giay, Hanoi, Vietnam</p>
                 </div>
             </div>
         </section>
 
         <section class="form-section card">
-            <h2><i class="fas fa-paper-plane"></i> Gửi tin nhắn</h2>
+            <h2><i class="fas fa-paper-plane"></i> Send a message to me</h2>
             <form class="contact-form">
                 <div class="form-group">
-                    <label for="name"><i class="fas fa-user"></i> Họ tên của bạn</label>
+                    <label for="name"><i class="fas fa-user"></i> Your full name</label>
                     <input type="text" id="name" placeholder="Nguyễn Văn A" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="email"><i class="fas fa-envelope"></i> Email của bạn</label>
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
                     <input type="email" id="email" placeholder="example@gmail.com" required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="message"><i class="fas fa-comment"></i> Lời nhắn...</label>
+                    <label for="message"><i class="fas fa-comment"></i> Message...</label>
                     <textarea id="message" rows="5" placeholder="Nhập nội dung tin nhắn tại đây..." required></textarea>
                 </div>
                 
-                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Gửi tin nhắn</button>
+                <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send</button>
             </form>
         </section>
         
         <section class="map-section card">
-			<h2><i class="fas fa-map-marked-alt"></i> Vị trí của tôi</h2>
+			<h2><i class="fas fa-map-marked-alt"></i> My location</h2>
 			<div class="map-container">
 			<iframe 
 				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.979664094626!2d105.80098867592617!3d21.034248180616547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab324bd5be5f%3A0x487e2f3f946f9c29!2zNTIgQ2jDuWEgSMOgLCBD4bunIFBow7ogQ2jDuWksIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1712913276441!5m2!1svi!2s" 
@@ -122,7 +122,7 @@
         // Hiệu ứng khi gửi form
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Cảm ơn bạn đã gửi tin nhắn! Tôi sẽ liên hệ lại sớm nhất có thể.');
+            alert('Thank you for sending the message! I will get back to you as soon as possible..');
             this.reset();
         });
     </script>
