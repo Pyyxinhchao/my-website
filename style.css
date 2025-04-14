@@ -249,8 +249,10 @@ blockquote {
     margin-bottom: 10px;
 }
 
-.hobby-item:hover i {
-    color: white;
+.hobby-item span {
+    text-align: center; /* Căn giữa nếu là văn bản */
+    display: block;
+    white-space: nowrap;  /* Ngăn văn bản xuống dòng */
 }
 
 /* Pet Photo */
