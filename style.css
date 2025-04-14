@@ -25,7 +25,6 @@ body {
     background-position: center;
     color: #222; /* Màu chữ đậm để nổi bật trên nền sáng */
 }
-}
 .overlay {
     background-color: rgba(0, 0, 0, 0.5); /* màu đen mờ phủ lên ảnh nền */
     min-height: 100vh;
